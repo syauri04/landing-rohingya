@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useInView } from "@/hooks/useInView";
+import Link from "next/link";
 
 const storyCards = [
   {
@@ -92,12 +93,13 @@ export default function StoriesSection() {
               laoreet, urna vel laoreet suscipit, sem lorem luctus augue, id
               scelerisque arcu leo elit quis sem.
             </p>
-            <button
+            <Link
+              href="/stories-on-home"
               type="button"
               className="mt-8 rounded-[13px] bg-[#410098] px-7 py-3 font-google-sans text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#4A2380] active:translate-y-0"
             >
               Selengkapnya
-            </button>
+            </Link>
           </div>
 
           {/* Kartu ikon */}
