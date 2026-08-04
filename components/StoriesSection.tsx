@@ -96,7 +96,7 @@ export default function StoriesSection() {
             <Link
               href="/stories-on-home"
               type="button"
-              className="mt-8 rounded-[13px] bg-[#410098] px-7 py-3 font-google-sans text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#4A2380] active:translate-y-0"
+              className="mt-8 inline-block rounded-[13px] bg-[#410098] px-7 py-3 font-google-sans text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#4A2380] active:translate-y-0"
             >
               Selengkapnya
             </Link>
