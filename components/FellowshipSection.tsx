@@ -29,13 +29,20 @@ export default function FellowshipSection() {
               <br />
               Co-Designing Hope
             </h1>
-            <p className="mt-4 max-w-lg font-google-sans text-base leading-[22px] text-black sm:mt-5 sm:text-lg sm:leading-[24px] md:mt-6 md:text-lg md:leading-[25px] lg:text-xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              ullamcorper sem orci, sed pharetra elit mollis amet. Donec
-              dignissim arcu leo, eget sagittis arcu feugiat eu. Praesent
-              laoreet, urna vel laoreet suscipit, sem lorem luctus augue, id
-              scelerisque arcu leo elit quis sem. Pellentesque aliquet porta
-              ornare.
+            <p className="mt-4 max-w-xl font-google-sans text-base leading-[22px] text-black sm:mt-5 sm:text-lg sm:leading-[24px] md:mt-6 md:text-lg md:leading-[25px] lg:text-xl">
+              The Rohingya are one of the most persecuted yet simultaneously
+              invisible communities across the globe, with millions of them
+              living across South and Southeast Asia as stateless refugees with
+              little agency over the way their lives are represented and
+              remembered.
+              <br /> <br />
+              Our storytelling fellowship for and with Rohingya youth directly
+              tackles this politics of erasure by putting the narrative power in
+              the hands of those most impacted by it. It creates a platform
+              wherein Rohingya youth-fellows can work through their traumatic
+              experiences, articulate their injustices, and narrate their lives
+              as thinkers, caregivers, leaders–not merely as victims of genocide
+              and statelessness.
             </p>
           </div>
 

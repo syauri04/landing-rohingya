@@ -7,16 +7,19 @@ import "swiper/css";
 
 const testimonials = [
   {
-    quote: "“Home is a shelter from storm-all sort for storms.”",
-    author: "William J. Benne",
+    quote:
+      "“In the world that denies treating me as a human being, it is through writing that I exist as a human being at least in a world I imagine.”",
+    author: "",
   },
   {
-    quote: "“A house protects the body, but a home protects the soul.”",
-    author: "Amina Rahman",
+    quote:
+      "“Ultimately, hope is the torch that leads us to our path and destination. And as long as we continue to share our stories, that light will continue to burn bright.”",
+    author: "",
   },
   {
-    quote: "“Wherever my family gathers, that is where I belong.”",
-    author: "Farid Hussain",
+    quote:
+      "“Our stories matter, even the unfinished ones. We are not just our suffering. We are survivors and leaders, and we deserve the chance to become who we were always meant to be.”",
+    author: "",
   },
 ] as const;
 
@@ -38,7 +41,7 @@ export default function TestimonialSection() {
         >
           {testimonials.map((t, i) => (
             <SwiperSlide key={i}>
-              <div className="mx-auto flex min-h-[400px] max-w-3xl flex-col items-center justify-center text-center sm:min-h-[600px]">
+              <div className="mx-auto flex min-h-[400px] max-w-5xl flex-col items-center justify-center text-center sm:min-h-[700px]">
                 <p className="font-google-sans text-3xl font-bold leading-snug text-black sm:text-4xl md:text-[60px] md:leading-[75px]">
                   {t.quote}
                 </p>

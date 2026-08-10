@@ -6,7 +6,7 @@ type HeaderProps = {
 };
 
 export default function Header({
-  leftText = "Fellowship Rohingya",
+  leftText = "Rohingya Storytelling Fellowship",
   rightText = "Stories on Home",
 }: HeaderProps) {
   return (

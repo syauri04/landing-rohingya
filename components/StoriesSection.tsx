@@ -87,18 +87,15 @@ export default function StoriesSection() {
               on Home
             </h2>
             <p className="mt-6 max-w-lg font-google-sans text-lg leading-[25px] text-black md:text-xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              ullamcorper sem orci, sed pharetra elit mollis amet. Donec
-              dignissim arcu leo, eget sagittis arcu feugiat eu. Praesent
-              laoreet, urna vel laoreet suscipit, sem lorem luctus augue, id
-              scelerisque arcu leo elit quis sem.
+              These are the stories of struggles, hope, and the longing for home
+              and a better future that are told and crafted by our fellows.
             </p>
             <Link
               href="/stories-on-home"
               type="button"
               className="mt-8 inline-block rounded-[13px] bg-[#410098] px-7 py-3 font-google-sans text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#4A2380] active:translate-y-0"
             >
-              Selengkapnya
+              More Details
             </Link>
           </div>
 
