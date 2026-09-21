@@ -13,6 +13,7 @@
   --animate-float-slow: float-slow 6s ease-in-out infinite;
   --animate-float-slow-delay: float-slow 6.5s ease-in-out 1.4s infinite;
   --animate-breathe: breathe 5s ease-in-out infinite;
+  --animate-eq: eq-bounce 0.9s ease-in-out infinite;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,10 +49,21 @@ body {
   }
 }
 
+@keyframes eq-bounce {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-float-slow,
   .animate-float-slow-delay,
-  .animate-breathe {
+  .animate-breathe,
+  .animate-eq {
     animation: none;
   }
 }

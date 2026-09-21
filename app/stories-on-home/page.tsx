@@ -3,95 +3,38 @@ import {
   StoriesShowcase,
   type StorySection,
 } from "@/components/StoriesShowcase";
+import { stories, formatLabel, type StoryFormat } from "@/data/stories";
 
-const storySections: StorySection[] = [
+const sectionMeta: Record<StoryFormat, Omit<StorySection, "id" | "stories">> =
   {
-    id: "written",
-    title: "Written Stories",
-    tone: "sage",
-    stories: [
-      {
-        id: "hope",
-        title: "What Hope Means to Me",
-        slug: "what-hope-means-to-me",
-        date: "23 Juli 2026",
-        image: "/assets/carimage-1.png",
-      },
-      {
-        id: "periferi",
-        title: "Merayakan Perempuan yang Berdiri di Periferi",
-        slug: "merayakan-perempuan-yang-berdiri-di-periferi",
-        date: "12 Juni 2026",
-        image: "/assets/carimage-2.png",
-      },
-      {
-        id: "transjakarta",
-        title: "Tentang Kota, Alienasi, dan Menangis di TransJakarta",
-        slug: "tentang-kota-alienasi-dan-menangis-di-transjakarta",
-        date: "5 Juni 2026",
-        image: "/assets/carimage-3.png",
-      },
-    ],
-  },
+    written: {
+      title: formatLabel.written,
+      subtitle:
+        "Explore stories written by our fellows to learn more about the world from the perspectives of a Rohingya youth",
+      tone: "sage",
+      cardVariant: "written",
+    },
+    audio: {
+      title: formatLabel.audio,
+      subtitle:
+        "Immerse yourself in the stories of home and hope narrated by our fellows.",
+      tone: "sun",
+      cardVariant: "audio",
+    },
+    visual: {
+      title: formatLabel.visual,
+      tone: "sun",
+      titleAlign: "end",
+    },
+  };
 
-  {
-    id: "audiovisual",
-    title: "Audiovisual Stories",
-    tone: "sage",
-    stories: [
-      {
-        id: "what-hope-means-to-me",
-        title: "Merayakan Perempuan yang Berdiri di Periferi",
-        slug: "merayakan-perempuan-yang-berdiri-di-periferi",
-        date: "12 Juni 2026",
-        image: "/assets/carimage-2.png",
-      },
-      {
-        id: "transjakarta",
-        title: "Tentang Kota, Alienasi, dan Menangis di TransJakarta",
-        slug: "tentang-kota-alienasi-dan-menangis-di-transjakarta",
-        date: "5 Juni 2026",
-        image: "/assets/carimage-3.png",
-      },
-      {
-        id: "hope",
-        title: "What Hope Means to Me",
-        slug: "what-hope-means-to-me",
-        date: "23 Juli 2026",
-        image: "/assets/carimage-1.png",
-      },
-    ],
-  },
-  {
-    id: "visual",
-    title: "Visual Stories",
-    tone: "sun",
-    titleAlign: "end",
-    stories: [
-      {
-        id: "transjakarta",
-        title: "Tentang Kota, Alienasi, dan Menangis di TransJakarta",
-        slug: "tentang-kota-alienasi-dan-menangis-di-transjakarta",
-        date: "5 Juni 2026",
-        image: "/assets/carimage-3.png",
-      },
-      {
-        id: "hope",
-        title: "What Hope Means to Me",
-        slug: "what-hope-means-to-me",
-        date: "23 Juli 2026",
-        image: "/assets/carimage-1.png",
-      },
-      {
-        id: "periferi",
-        title: "Merayakan Perempuan yang Berdiri di Periferi",
-        slug: "merayakan-perempuan-yang-berdiri-di-periferi",
-        date: "12 Juni 2026",
-        image: "/assets/carimage-2.png",
-      },
-    ],
-  },
-];
+const storySections: StorySection[] = (
+  ["written", "audio", "visual"] as const
+).map((format) => ({
+  id: format,
+  ...sectionMeta[format],
+  stories: stories.filter((story) => story.format === format),
+}));
 
 export default function StoriesOnHome() {
   return (

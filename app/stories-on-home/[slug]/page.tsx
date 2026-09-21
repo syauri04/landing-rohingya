@@ -1,59 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
-type Story = {
-  slug: string;
-  category: string;
-  title: string;
-  date: string;
-  image: string;
-  bannerImage: string;
-  bannerCaption?: string;
-  excerpt: string;
-  body: string[];
-};
-
-// Replace this with data from your CMS/database when it is available.
-const stories: Story[] = [
-  {
-    slug: "what-hope-means-to-me",
-    category: "Written Stories",
-    title: "What Hope Means to Me",
-    date: "27 Agustus 2024",
-    image: "/assets/carimage-1.png",
-    bannerImage: "/assets/detail-hero.png",
-    bannerCaption: "Photo credit: Roemah Inspirit",
-    excerpt:
-      "Pada akhir Februari hingga awal bulan Maret lalu, Roemah Inspirirt bersama dengan dua lembaga dari India Indonesia—PLUS dan KEHATI—mendapat kesempatan pergi ke Cape Town, Afrika Selatan untuk menghadiri pertemuan luring perdana dari inisiatif global Weaving Resilience.",
-    body: [
-      "Inisiatif ini bertujuan memperkuat dan menghubungkan organisasi serta gerakan masyarakat sipil dari belahan dunia Selatan. Berlandaskan pada tiga pilar dukungan: Institutional Resilience (Ketahanan Lembaga), Strategic Relevance (Relevansi Strategis), dan Holistic Well-Being (Kesejahteraan Holistik), Weaving Resilience mengumpulkan 34 lembaga dari belahan Selatan dunia untuk saling mengenal dan mendalami kerja satu sama lain.",
-      "Kesan bahwa pertemuan tidak biasa-biasa saja sudah muncul sejak jam pertama pertemuan ini dilangsungkan. Roemah Inspirirt memimpin proses perkenalan awal menggunakan kartu-kartu pertanyaan yang diceritakan dalam kelompok kecil berisi dua, empat, dan enam orang. Metode perkenalan selanjutnya yang difasilitasi Pretahub dari Brazil menggunakan metode River of Life. Metode ini menarik semua peserta merefleksikan dan berbagi cerita perjalanan hidupnya sebagai aktivis dan perjalanan organisasi dalam merintis inisiatif Weaving Resilience di negara masing-masing.",
-    ],
-  },
-  {
-    slug: "merayakan-perempuan-yang-berdiri-di-periferi",
-    category: "Written Stories",
-    title: "Merayakan Perempuan yang Berdiri di Periferi",
-    date: "12 Juni 2026",
-    image: "/assets/carimage-2.png",
-    bannerImage: "/assets/detail-hero.png",
-    excerpt:
-      "Cerita tentang perempuan, ruang pinggiran, dan keberanian untuk tetap berdiri.",
-    body: ["Artikel ini sedang disiapkan."],
-  },
-  {
-    slug: "tentang-kota-alienasi-dan-menangis-di-transjakarta",
-    category: "Written Stories",
-    title: "Tentang Kota, Alienasi, dan Menangis di TransJakarta",
-    date: "5 Juni 2026",
-    image: "/assets/carimage-3.png",
-    bannerImage: "/assets/detail-hero.png",
-    excerpt:
-      "Menyusuri kota dan emosi yang hadir dalam perjalanan sehari-hari.",
-    body: ["Artikel ini sedang disiapkan."],
-  },
-];
+import { stories, formatLabel } from "@/data/stories";
 
 export default async function StoryDetailPage({
   params,
@@ -70,12 +18,12 @@ export default async function StoryDetailPage({
     .slice(0, 3);
 
   return (
-    <main className="pb-20 pt-10 text-[#202845] sm:pt-16 lg:pb-28">
+    <main className="pb-20  text-[#202845]  lg:pb-28">
       {/* Banner */}
-      <div className="mx-auto max-w-screen-2xl px-5 sm:px-8 md:px-10 lg:px-14 xl:px-16">
+      <div className="mx-auto bg-[#BFBC80] py-16 max-w-screen-2xl px-5 sm:px-8 md:px-10 lg:px-14 xl:px-16">
         <div className="relative aspect-[16/9] overflow-hidden rounded-[32px]  sm:aspect-[16/7] sm:rounded-[48px]">
           <Image
-            src={story.bannerImage}
+            src={story.image}
             alt={story.title}
             fill
             priority
@@ -90,9 +38,9 @@ export default async function StoryDetailPage({
         </div>
       </div>
 
-      <article className="mx-auto w-full max-w-3xl px-5 pt-9 sm:px-8 sm:pt-12">
+      <article className="mx-auto w-full max-w-4xl px-5 pt-9 sm:px-8 sm:pt-12">
         <p className="text-lg leading-[24px] font-bold text-[#676E55] sm:leading-[32px] sm:text-2xl">
-          {story.category}
+          {formatLabel[story.format]}
         </p>
         <h1 className="mt-1 text-3xl font-bold sm:leading-[40px] sm:text-4xl lg:leading-[56px] lg:text-5xl">
           {story.title}
@@ -112,9 +60,9 @@ export default async function StoryDetailPage({
             </svg>
             Share
           </button>
-          <time className="text-xl text-[#222640]" dateTime="2024-08-27">
-            {story.date}
-          </time>
+          {story.date && (
+            <time className="text-xl text-[#222640]">{story.date}</time>
+          )}
         </div>
 
         <div className="relative mt-7 aspect-[16/10] overflow-hidden rounded-xl bg-[#e9e9e9] sm:mt-9 sm:rounded-2xl">
@@ -128,10 +76,34 @@ export default async function StoryDetailPage({
         </div>
 
         <div className="mt-7 space-y-5 text-base leading-[1.62] text-[#303750] sm:mt-9 sm:text-lg">
-          <p>{story.excerpt}</p>
-          {story.body.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+          {story.body.map((paragraph, index) => {
+            if (paragraph === "• • •") {
+              return (
+                <p
+                  key={index}
+                  aria-hidden="true"
+                  className="text-center tracking-[0.3em] text-[#8b8f9a]"
+                >
+                  {paragraph}
+                </p>
+              );
+            }
+            if (paragraph.startsWith("## ")) {
+              return (
+                <h2
+                  key={index}
+                  className="pt-2 text-xl font-bold text-[#202845] sm:text-2xl"
+                >
+                  {paragraph.slice(3)}
+                </h2>
+              );
+            }
+            return (
+              <p key={index} className="whitespace-pre-line">
+                {paragraph}
+              </p>
+            );
+          })}
         </div>
       </article>
 
@@ -164,13 +136,15 @@ export default async function StoryDetailPage({
               <h3 className="mt-3 text-base font-bold leading-tight text-black sm:text-lg">
                 {item.title}
               </h3>
-              <p className="mt-1 text-sm text-black/65">{item.date}</p>
+              {item.date && (
+                <p className="mt-1 text-sm text-black/65">{item.date}</p>
+              )}
             </Link>
           ))}
         </div>
       </section>
 
-      <section
+      {/* <section
         aria-labelledby="comment-title"
         className="mx-auto mt-20 w-full max-w-3xl border-t border-[#d8dbe1] px-5 pt-8 sm:mt-28 sm:px-8"
       >
@@ -188,7 +162,7 @@ export default async function StoryDetailPage({
             Post
           </button>
         </form>
-      </section>
+      </section> */}
     </main>
   );
 }

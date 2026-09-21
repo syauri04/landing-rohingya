@@ -30,12 +30,8 @@ export default function StoriesHomeHero() {
               on Home
             </h1>
             <p className="mt-4 max-w-lg font-google-sans text-base leading-[22px] text-black sm:mt-5 sm:text-lg sm:leading-[24px] md:mt-6 md:text-lg md:leading-[25px] lg:text-xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              ullamcorper sem orci, sed pharetra elit mollis amet. Donec
-              dignissim arcu leo, eget sagittis arcu feugiat eu. Praesent
-              laoreet, urna vel laoreet suscipit, sem lorem luctus augue, id
-              scelerisque arcu leo elit quis sem. Pellentesque aliquet porta
-              ornare.
+              These are the stories of struggles, hope, and the longing for home
+              and a better future that are told and crafted by our fellows.
             </p>
           </div>
 
