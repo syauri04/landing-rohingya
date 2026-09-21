@@ -4,6 +4,7 @@ export type Story = {
   id: string;
   slug: string;
   title: string;
+  author?: string;
   format: StoryFormat;
   image: string;
   alt?: string;
@@ -30,6 +31,7 @@ export const stories: Story[] = [
     id: "written-1",
     slug: "from-the-moment-i-was-born",
     title: "From The Moment I Was Born",
+    author: "Ayat Ullah",
     format: "written",
     image: "/assets/karya/writen-karya-1.png",
     summary:
@@ -120,6 +122,7 @@ export const stories: Story[] = [
     id: "written-2",
     slug: "i-am-rohingya",
     title: "I am Rohingya",
+    author: "Bilkis",
     format: "written",
     image: "/assets/karya/writen-karya-2.png",
     summary:
@@ -128,7 +131,6 @@ export const stories: Story[] = [
     excerpt:
       "Bilkis invites us to see the world she dreamt of; one that is built on books and lights, not fears and endless nights.",
     body: [
-      "By Bilkis",
       "I am Rohingya, don't turn away,\nI have a story I want to say.\nI once had a home, a place to belong,\nNow I carry memories and stay strong.",
       "The world may see a refugee's face,\nBut I dream of freedom, not just a place.\nI dream of classrooms, books, and light,\nNot fear, not hunger, not endless nights.",
       "I do not ask for pity or fame,\nOnly dignity without shame.\nA chance to learn, a chance to grow and build a better future,\nTo show the world what I can know.",
@@ -141,6 +143,7 @@ export const stories: Story[] = [
     id: "written-3",
     slug: "hope-through-writing",
     title: "Hope Through Writing",
+    author: "Sirajul Islam",
     format: "written",
     image: "/assets/karya/writen-karya-3.png",
     summary:
@@ -149,7 +152,6 @@ export const stories: Story[] = [
     excerpt:
       "In a world that dehumanizes refugees, Sirajul found belonging and agency through the act of writing.",
     body: [
-      "— Sirajul Islam",
       "Writing has been my pastime since my childhood, but frankly speaking, I never thought I would become the poet and writer I am today, not in my wildest dreams. It was when I was at my lowest ebb that I was exposed to writing.",
       "In August 2017, when the Myanmar military blatantly carried out the so-called 'Clearance Operation', and burned down my home, I had to flee to Bangladesh where I found a bamboo-and-tarpaulin shelter in what is now the world's largest refugee camp largely referred to as an open-air prison.",
       "After becoming a refugee, I was no longer the person I was back in my hometown. I lost my dream of becoming a doctor and hope for a better future. At that time, I chose poetry as a tool for purging my fractured soul, and amplifying the voice of my marginalised people. Thereupon it has become my means for resilience, resistance and existence.",
@@ -165,6 +167,7 @@ export const stories: Story[] = [
     id: "written-4",
     slug: "what-hope-means-to-me-written",
     title: "What Hope Means to Me",
+    author: "Sawyedul Amin",
     format: "written",
     image: "/assets/karya/writen-karya-4.png",
     summary:
@@ -187,6 +190,7 @@ export const stories: Story[] = [
     id: "written-5",
     slug: "what-does-hope-mean-to-me",
     title: "What Does Hope Mean To Me?",
+    author: "Ata Ullah",
     format: "written",
     image: "/assets/karya/writen-karya-5.png",
     summary:
@@ -218,6 +222,7 @@ export const stories: Story[] = [
     id: "audio-1",
     slug: "i-am-rohingya-audio",
     title: "I am Rohingya",
+    author: "Bilkis",
     format: "audio",
     image: "/assets/karya/writen-karya-2.png",
     audio: "/assets/karya/i-am-rohingya.wav",

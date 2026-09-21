@@ -45,6 +45,11 @@ export default async function StoryDetailPage({
         <h1 className="mt-1 text-3xl font-bold sm:leading-[40px] sm:text-4xl lg:leading-[56px] lg:text-5xl">
           {story.title}
         </h1>
+        {story.author && (
+          <p className="mt-2 text-base text-[#535a6d] sm:text-lg">
+            By {story.author}
+          </p>
+        )}
 
         <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[#535a6d] sm:text-base">
           <button

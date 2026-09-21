@@ -115,14 +115,14 @@ export default function StoriesSection() {
               delayMs={0}
             />
             <div className="flex flex-col gap-4 sm:gap-6">
-              <StoryCard
+              {/* <StoryCard
                 label="Visual"
                 label2="Stories"
                 icon={storyCards[1].icon}
                 delayMs={80}
-              />
+              /> */}
               <StoryCard
-                label="Audiovisual"
+                label="Audio"
                 label2="Stories"
                 icon={storyCards[2].icon}
                 delayMs={160}
