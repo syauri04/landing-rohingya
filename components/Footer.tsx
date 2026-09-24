@@ -2,38 +2,32 @@ import Image from "next/image";
 
 const partners = [
   {
-    src: "/assets/mitra-1.png",
+    src: "/assets/footer/Logo-AJAR.png",
     alt: "British Council",
     width: 82,
     height: 26,
   },
   {
-    src: "/assets/mitra-2.png",
+    src: "/assets/footer/Logo-CRRIC.png",
     alt: "Partner 2",
     width: 95,
     height: 44,
   },
   {
-    src: "/assets/mitra-3.png",
+    src: "/assets/footer/Logo-Kait.png",
     alt: "Partner 3",
     width: 75,
     height: 44,
   },
   {
-    src: "/assets/mitra-4.png",
+    src: "/assets/footer/Logo-SEAHRN.png",
     alt: "Partner 4",
     width: 95,
     height: 44,
   },
   {
-    src: "/assets/mitra-5.png",
-    alt: "Partner 4",
-    width: 95,
-    height: 44,
-  },
-  {
-    src: "/assets/mitra-6.png",
-    alt: "Partner 4",
+    src: "/assets/footer/Roemah Inspirit_Horizontal_Full Color.png",
+    alt: "Partner 5",
     width: 95,
     height: 44,
   },
@@ -47,7 +41,7 @@ export default function Footer() {
           Organized by :
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 md:flex-nowrap md:justify-end lg:gap-5">
+        <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 md:flex-nowrap md:justify-end lg:gap-1">
           {partners.map((logo) => (
             <Image
               key={logo.alt}
@@ -55,7 +49,7 @@ export default function Footer() {
               alt={logo.alt}
               width={logo.width}
               height={logo.height}
-              className="h-5 w-auto object-contain sm:h-6 md:h-7"
+              className="h-8 w-auto object-contain sm:h-10 md:h-16"
             />
           ))}
         </div>
